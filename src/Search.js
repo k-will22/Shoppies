@@ -21,7 +21,8 @@ function Search({setTerm, movies, nominees, setNominees}) {
           return (
             <div key={movie.imdbID}>
               <p>{movie.Title} ({movie.Year})</p>
-              {nominees.length < 5 ? <button onClick={handleClick} title={movie.Title} name={movie.Year}>Nominate</button> : <br />}
+              {nominees.find(mov => mov.Title === movie.Title) || nominees.length > 4 ? <button style={{color: "grey"}}>Nominate</button> :
+              <button onClick={handleClick} title={movie.Title} name={movie.Year}>Nominate</button>}
             </div>
           )
         })
