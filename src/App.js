@@ -2,18 +2,18 @@ import './App.css';
 import React, {useEffect, useState} from 'react'
 import Nominations from './Nominations.js'
 import Search from './Search.js'
+import ls from 'local-storage'
 
 function App() {
   const [term, setTerm] = useState('')
   const [movies, setMovies] = useState([])
   const [nominees, setNominees] = useState([])
 
+  console.log(nominees)
+
   useEffect(() => {
-    fetch('./db.json')
-    .then(response => response.json)
-    .then(data => {
-      console.log(data)
-    })
+    let savedNoms = ls.get('noms')
+    setNominees(savedNoms)
   }, [])
 
   useEffect(() => {

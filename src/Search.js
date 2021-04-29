@@ -1,4 +1,5 @@
 import React from 'react'
+import ls from 'local-storage'
  
 function Search({setTerm, movies, nominees, setNominees}) {
 
@@ -13,6 +14,7 @@ function Search({setTerm, movies, nominees, setNominees}) {
         }
     
         setNominees([...nominees, newNom])
+        ls.set('noms', [...nominees, newNom])
     }
 
     let movieList 
