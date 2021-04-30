@@ -36,3 +36,31 @@
     transform: rotate(360deg);
   }
 }
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    "One One Two Two"
+    "One One Two Two"
+    "One One Two Two";
+}
+.One { grid-area: One; }
+.Two { grid-area: Two; }
+
+.Title {
+  background-color: lightgray;
+  color: green;
+  padding: 40px;
+  text-shadow: -2px -1px 0 black;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 50px;
+  border-top: solid;
+  border-bottom: solid;
+}
+
+.Title2 {
+  text-shadow: -2px -1px 0 black;
+}

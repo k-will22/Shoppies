@@ -32,9 +32,9 @@ function Search({setTerm, movies, nominees, setNominees}) {
 
     return (
     <div>
-    <h3>Search</h3>
+    <h3>Search Movies by Title</h3>
     <input onChange={handleChange}></input>
-    {movies.Error ? <p>{movies.Error}</p> : <p>{movieList}</p>}
+    {movies.Error ? null : <p>{movieList}</p>}
     </div>
     )
 }

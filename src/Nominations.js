@@ -21,8 +21,8 @@ function Nominations({nominees, setNominees}) {
 
     return (
         <div>
-            {nominees.length < 5 ? <h2>Choose 5 Nominations!</h2> : null}
-            <h3>Nominations</h3>
+            {nominees.length < 5 ? <h2 className="Title2" style={{color: "green"}}>Choose 5 Nominations!</h2> : 
+            <h2 className="Title2" style={{color: "red"}}>All Nominations Chosen!</h2>}
             {nominations}
         </div>
     )

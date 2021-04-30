@@ -9,8 +9,6 @@ function App() {
   const [movies, setMovies] = useState([])
   const [nominees, setNominees] = useState([])
 
-  console.log(nominees)
-
   useEffect(() => {
     let savedNoms = ls.get('noms')
     setNominees(savedNoms)
@@ -24,15 +22,19 @@ function App() {
 
   return (
     <div className="App">
-      <h1>The Shoppies</h1>
+      <h1 className="Title">The Shoppies</h1>
+      <div className="grid-container">
+      <div className="One">
       <Nominations nominees={nominees} setNominees={setNominees}/>
-      <hr style={{width:500}}/>
-      {nominees.length < 5 ? null : <h2 style={{color: "red"}}>All Nominations Chosen!</h2>}
+      </div>
+      <div className="Two">
       <Search 
         setTerm={setTerm} 
         movies={movies} 
         nominees={nominees}
         setNominees={setNominees}/>
+        </div>
+        </div>
     </div>
   );
 }
