@@ -39,21 +39,28 @@
 
 .grid-container {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
-  gap: 0px 0px;
+  gap: 50px 50px;
   grid-template-areas:
     "One One Two Two"
     "One One Two Two"
     "One One Two Two";
+  padding-left: 200px;
 }
-.One { grid-area: One; }
-.Two { grid-area: Two; }
+.One { 
+  grid-area: One;
+ }
+ 
+.Two { 
+  grid-area: Two;
+  padding-left: 40px; 
+}
 
 .Title {
   background-color: lightgray;
   color: green;
-  padding: 40px;
+  padding: 30px;
   text-shadow: -2px -1px 0 black;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   font-size: 50px;
@@ -63,4 +70,24 @@
 
 .Title2 {
   text-shadow: -2px -1px 0 black;
+}
+
+@keyframes nominate {
+  0%   {color: red;}
+  25%  {color: maroon;}
+  50%  {color: red;}
+  75%  {color: maroon;}
+  100% {color: red;}
+}
+
+.anim {
+  animation-name: nominate;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+
+.border {
+  border: solid black;
+  background-color: aliceblue;
+  padding: 20px;
 }

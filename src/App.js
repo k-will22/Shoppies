@@ -30,6 +30,7 @@ function App() {
       </div>
       <div className="Two">
       <Search 
+        term={term}
         setTerm={setTerm} 
         movies={movies} 
         nominees={nominees}

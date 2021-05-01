@@ -1,7 +1,7 @@
 import React from 'react'
 import ls from 'local-storage'
  
-function Search({setTerm, movies, nominees, setNominees}) {
+function Search({term, setTerm, movies, nominees, setNominees}) {
 
     function handleChange(event) {
         setTerm(event.target.value)
@@ -25,6 +25,9 @@ function Search({setTerm, movies, nominees, setNominees}) {
               <p>{movie.Title} ({movie.Year})</p>
               {nominees.find(mov => mov.Title === movie.Title) || nominees.length > 4 ? <button style={{color: "grey"}}>Nominate</button> :
               <button onClick={handleClick} title={movie.Title} name={movie.Year}>Nominate</button>}
+              <br />
+              <br />
+              <hr style={{width:300}}/> 
             </div>
           )
         })
@@ -32,8 +35,12 @@ function Search({setTerm, movies, nominees, setNominees}) {
 
     return (
     <div>
-    <h3>Search Movies by Title</h3>
+    <h1 className="Title2" style={{color: "green"}}>Search Movies by Title</h1>
     <input onChange={handleChange}></input>
+    <br />
+    <br />
+    {term.length > 0 ? <h2>Results for "{term}"</h2> : null}
+    <br />
     {movies.Error ? null : <p>{movieList}</p>}
     </div>
     )
