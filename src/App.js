@@ -8,6 +8,7 @@ function App() {
   const [term, setTerm] = useState('')
   const [movies, setMovies] = useState([])
   const [nominees, setNominees] = useState([])
+  const MY_KEY = process.env.REACT_APP_API_KEY
 
   useEffect(() => {
     let savedNoms = ls.get('noms')
@@ -15,16 +16,16 @@ function App() {
   }, [])
 
   useEffect(() => {
-    fetch(`http://www.omdbapi.com/?s=${term}&apikey=78013faa`)
+    fetch(`http://www.omdbapi.com/?s=${term}&apikey=${MY_KEY}`)
     .then(response => response.json())
     .then(setMovies)
-  }, [term])
+  }, [term, MY_KEY])
 
   return (
     <div className="App">
       <h1 className="Title">The Shoppies</h1>
       <div className="grid-container">
-      <div className="One">
+      <div className="One"> 
       <Nominations nominees={nominees} setNominees={setNominees}/>
       </div>
       <div className="Two">
