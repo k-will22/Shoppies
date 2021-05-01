@@ -19,15 +19,16 @@ function Search({term, setTerm, movies, nominees, setNominees}) {
 
     let movieList 
     if (movies.Search) {
-        movieList = movies.Search.map(movie => {
+        movieList = movies.Search.slice(0, 3).map(movie => {
           return (
             <div key={movie.imdbID}>
+                 <hr style={{width:300}}/> 
               <p>{movie.Title} ({movie.Year})</p>
               {nominees.find(mov => mov.Title === movie.Title) || nominees.length > 4 ? <button style={{color: "grey"}}>Nominate</button> :
               <button onClick={handleClick} title={movie.Title} name={movie.Year}>Nominate</button>}
               <br />
               <br />
-              <hr style={{width:300}}/> 
+             
             </div>
           )
         })
@@ -40,7 +41,6 @@ function Search({term, setTerm, movies, nominees, setNominees}) {
     <br />
     <br />
     {term.length > 0 ? <h2>Results for "{term}"</h2> : null}
-    <br />
     {movies.Error ? null : <p>{movieList}</p>}
     </div>
     )
