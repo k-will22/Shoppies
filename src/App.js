@@ -16,7 +16,7 @@ function App() {
   }, [])
 
   useEffect(() => {
-    fetch(`http://www.omdbapi.com/?s=${term}&apikey=${MY_KEY}`)
+    fetch(`https://www.omdbapi.com/?s=${term}&apikey=${MY_KEY}`)
     .then(response => response.json())
     .then(setMovies)
   }, [term, MY_KEY])
