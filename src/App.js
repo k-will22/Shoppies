@@ -2,12 +2,18 @@ import './App.css';
 import React, {useEffect, useState} from 'react'
 import Nominations from './Nominations.js'
 import Search from './Search.js'
+import ls from 'local-storage'
 
 function App() {
   const [term, setTerm] = useState('')
   const [movies, setMovies] = useState([])
   const [nominees, setNominees] = useState([])
   const MY_KEY = process.env.REACT_APP_API_KEY
+
+  useEffect(() => {
+    let savedNoms = ls.get('noms')
+    setNominees(savedNoms)
+  }, [])
 
   useEffect(() => {
     fetch(`https://www.omdbapi.com/?s=${term}&apikey=${MY_KEY}`)
