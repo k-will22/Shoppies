@@ -10,17 +10,20 @@ function Nominations({nominees, setNominees}) {
         ls.set('noms', updatedNoms)
       }
 
-      let  nominations = nominees.map(nom => {
-        return (
-          <div key={nom.Title}>
-            <hr style={{width:300}}/>
-            <p>{nom.Title} ({nom.Year})</p>
-            <button onClick={handleRemove} value={nom.Title}>Remove</button>
-            <br />
-            <br />
-          </div>
-        )
-      })
+      let nominations = []
+      if (nominees.length > 0) {
+        nominations = nominees.map(nom => {
+          return (
+            <div key={nom.Title}>
+              <hr style={{width:300}}/>
+              <p>{nom.Title} ({nom.Year})</p>
+              <button onClick={handleRemove} value={nom.Title}>Remove</button>
+              <br />
+              <br />
+            </div>
+          )
+        })
+      }
 
     return (
         <div>
