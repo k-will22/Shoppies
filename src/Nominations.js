@@ -11,7 +11,7 @@ function Nominations({nominees, setNominees}) {
       }
 
       console.log(nominees)
-      let  nominations = nominees.map(nom => {
+      let nominations = nominees.map(nom => {
         return (
           <div key={nom.Title}>
             <hr style={{width:300}}/>
