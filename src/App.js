@@ -10,6 +10,7 @@ function App() {
   const [nominees, setNominees] = useState([])
   const MY_KEY = process.env.REACT_APP_API_KEY
 
+  console.log(ls.get('noms'))
   useEffect(() => {
     let savedNoms = ls.get('noms')
     setNominees(savedNoms)
