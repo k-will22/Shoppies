@@ -1,5 +1,5 @@
 import React from 'react'
-import ls from 'local-storage'
+// import ls from 'local-storage'
 
 function Nominations({nominees, setNominees}) {
 
@@ -7,7 +7,7 @@ function Nominations({nominees, setNominees}) {
         const updatedNoms = nominees.filter(nom => nom.Title !== event.target.value)
     
         setNominees(updatedNoms)
-        ls.set('noms', updatedNoms)
+        // ls.set('noms', updatedNoms)
       }
 
       console.log(nominees)

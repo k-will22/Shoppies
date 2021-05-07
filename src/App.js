@@ -2,7 +2,7 @@ import './App.css';
 import React, {useEffect, useState} from 'react'
 import Nominations from './Nominations.js'
 import Search from './Search.js'
-import ls from 'local-storage'
+// import ls from 'local-storage'
 
 function App() {
   const [term, setTerm] = useState('')
