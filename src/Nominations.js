@@ -1,5 +1,4 @@
 import React from 'react'
-// import ls from 'local-storage'
 
 function Nominations({nominees, setNominees}) {
 
@@ -7,7 +6,6 @@ function Nominations({nominees, setNominees}) {
         const updatedNoms = nominees.filter(nom => nom.Title !== event.target.value)
     
         setNominees(updatedNoms)
-        // ls.set('noms', updatedNoms)
       }
 
       console.log(nominees)
@@ -30,7 +28,7 @@ function Nominations({nominees, setNominees}) {
             <div className="border">
             <h1 className="Title2" style={{color: "slategrey"}}>Nominations</h1>
             {nominations.length === 0 ? <h3>No Nominations Chosen</h3> : null}
-            {nominations.slice(0, 4)}
+            {nominations}
             </div>
         </div>
     )
